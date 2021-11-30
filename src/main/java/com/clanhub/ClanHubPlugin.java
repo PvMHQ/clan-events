@@ -1,4 +1,4 @@
-package com.clanevents;
+package com.clanhub;
 
 import com.google.inject.Provides;
 import javax.inject.Inject;
@@ -20,33 +20,33 @@ import java.io.IOException;
 
 @Slf4j
 @PluginDescriptor(
-		name = "Clan Events",
+		name = "Clan Hub",
 		description = "A plugin used to keep track of clan events/announcements",
-		tags = {"ely", "elysium", "cc", "hunt", "pass", "event", "clan"}
+		tags = {"clan", "pass", "event"}
 )
-public class ClanEventsPlugin extends Plugin
+public class ClanHubPlugin extends Plugin
 {
 	@Inject
 	private Client client;
 
 	@Inject
-	private ClanEventsConfig config;
+	private ClanHubConfig config;
 
 	@Inject
 	private OverlayManager overlayManager;
 
 	@Inject
-	private ClanEventsOverlay overlay;
+	private ClanHubOverlay overlay;
 
 	@Inject
 	private SkillIconManager skillIconManager;
 
 	@Inject
 	private ClientToolbar clientToolbar;
-	private ClanEventsPanel panel;
+	private ClanHubPanel panel;
 	private NavigationButton uiNavigationButton;
 
-	static final String CONFIG_GROUP = "clanevents";
+	static final String CONFIG_GROUP = "clanhub";
 
 	@Override
 	protected void startUp() throws Exception
@@ -77,7 +77,7 @@ public class ClanEventsPlugin extends Plugin
 		if (!config.sheetId().equals("") && !config.apiKey().equals(""))
 		{
 			final BufferedImage icon = ImageUtil.loadImageResource(getClass(), "icon.png");
-			panel = injector.getInstance(ClanEventsPanel.class);
+			panel = injector.getInstance(ClanHubPanel.class);
 			panel.init(config, 0);
 			uiNavigationButton = NavigationButton.builder()
 					.tooltip("Clan Hub")
@@ -90,8 +90,8 @@ public class ClanEventsPlugin extends Plugin
 	}
 
 	@Provides
-	ClanEventsConfig provideConfig(ConfigManager configManager)
+    ClanHubConfig provideConfig(ConfigManager configManager)
 	{
-		return configManager.getConfig(ClanEventsConfig.class);
+		return configManager.getConfig(ClanHubConfig.class);
 	}
 }

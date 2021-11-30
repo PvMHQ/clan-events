@@ -1,11 +1,10 @@
-package com.clanevents;
+package com.clanhub;
 
 import net.runelite.api.Client;
 import net.runelite.client.ui.overlay.OverlayMenuEntry;
 import net.runelite.client.ui.overlay.OverlayPanel;
 import net.runelite.client.ui.overlay.OverlayPosition;
 import net.runelite.client.ui.overlay.components.LineComponent;
-import net.runelite.client.ui.overlay.components.TitleComponent;
 import net.runelite.client.ui.overlay.components.LayoutableRenderableEntity;
 
 import javax.inject.Inject;
@@ -18,15 +17,15 @@ import java.util.List;
 import static net.runelite.api.MenuAction.RUNELITE_OVERLAY_CONFIG;
 import static net.runelite.client.ui.overlay.OverlayManager.OPTION_CONFIGURE;
 
-public class ClanEventsOverlay extends OverlayPanel
+public class ClanHubOverlay extends OverlayPanel
 {
     private final Client client;
-    private final ClanEventsPlugin plugin;
+    private final ClanHubPlugin plugin;
     @Inject
-    private ClanEventsConfig config;
+    private ClanHubConfig config;
 
     @Inject
-    private ClanEventsOverlay(Client client, ClanEventsPlugin plugin)
+    private ClanHubOverlay(Client client, ClanHubPlugin plugin)
     {
         super(plugin);
         setPosition(OverlayPosition.TOP_CENTER);

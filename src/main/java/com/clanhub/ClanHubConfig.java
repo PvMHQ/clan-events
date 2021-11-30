@@ -1,4 +1,4 @@
-package com.clanevents;
+package com.clanhub;
 
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
@@ -7,8 +7,8 @@ import net.runelite.client.config.ConfigSection;
 
 import java.awt.*;
 
-@ConfigGroup(ClanEventsPlugin.CONFIG_GROUP)
-public interface ClanEventsConfig extends Config
+@ConfigGroup(ClanHubPlugin.CONFIG_GROUP)
+public interface ClanHubConfig extends Config
 {
 	@ConfigSection(
 			name = "Event Password",

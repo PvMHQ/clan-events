@@ -24,15 +24,15 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.clanevents;
+package com.clanhub;
 
 import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
 import javax.swing.*;
 
-import com.clanevents.components.combobox.ComboBoxIconEntry;
-import com.clanevents.components.combobox.ComboBoxIconListRenderer;
+import com.clanhub.components.combobox.ComboBoxIconEntry;
+import com.clanhub.components.combobox.ComboBoxIconListRenderer;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import java.awt.Color;
@@ -45,7 +45,7 @@ import net.runelite.client.ui.PluginPanel;
 import net.runelite.client.util.ImageUtil;
 
 @Slf4j
-class ClanEventsPanel extends PluginPanel
+class ClanHubPanel extends PluginPanel
 {
     private final JPanel ssArea = new JPanel();
     private final JLabel ssText = new JLabel();
@@ -54,7 +54,7 @@ class ClanEventsPanel extends PluginPanel
     private String color1;
     private String color2;
 
-    void init(ClanEventsConfig config, int index){
+    void init(ClanHubConfig config, int index){
         // Google sheet API
         String data = "";
         sheet.setKey(config.apiKey());
@@ -111,7 +111,7 @@ class ClanEventsPanel extends PluginPanel
         this.add(createRefreshButton(config), BorderLayout.NORTH);
     }
 
-    private JButton createRefreshButton(ClanEventsConfig config)
+    private JButton createRefreshButton(ClanHubConfig config)
     {
         final JButton label = new JButton("Refresh");
         label.setFocusable(false);

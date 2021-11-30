@@ -1,4 +1,4 @@
-package com.clanevents;
+package com.clanhub;
 
 
 import com.google.api.client.http.HttpRequestInitializer;

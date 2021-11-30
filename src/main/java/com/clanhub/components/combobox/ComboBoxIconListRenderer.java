@@ -1,4 +1,4 @@
-package com.clanevents.components.combobox;
+package com.clanhub.components.combobox;
 
 import java.awt.Color;
 import java.awt.Component;
